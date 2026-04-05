@@ -46,14 +46,21 @@
         </section>
       </section>
 
-      <section class="panel slot-preview">
-        <h2>スロット解除エリア（次段階の骨組み）</h2>
-        <div class="reels" aria-label="slot preview">
-          <div class="reel">7</div>
-          <div class="reel">?</div>
-          <div class="reel">7</div>
+      <section class="panel slot-preview" id="slotPanel">
+        <h2>スロット解除エリア</h2>
+        <div class="alarm-banner" id="alarmBanner" hidden>
+          <strong>ALARM!</strong>
+          <span>777 を揃えるまで止まりません。</span>
         </div>
-        <p class="muted">次のタスクで、ここに 3 リール・すべり目・777 判定を実装する。</p>
+        <div class="reels" aria-label="slot preview">
+          <div class="reel" id="reel1">7</div>
+          <div class="reel" id="reel2">7</div>
+          <div class="reel" id="reel3">7</div>
+        </div>
+        <div class="actions">
+          <button id="spinButton" type="button" class="secondary" disabled>スピン</button>
+        </div>
+        <p class="muted" id="slotMessage">次の小タスクで、ここに 3 リール・すべり目・777 判定を実装する。</p>
       </section>
     </main>
 
