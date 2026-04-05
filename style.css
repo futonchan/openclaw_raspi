@@ -20,9 +20,7 @@ body.light {
   --shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -37,9 +35,9 @@ body {
 }
 
 .container {
-  width: min(720px, calc(100% - 32px));
+  width: min(960px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 72px 0;
+  padding: 48px 0 72px;
 }
 
 .eyebrow {
@@ -51,10 +49,7 @@ body {
   font-size: 0.8rem;
 }
 
-h1,
-h2 {
-  margin-top: 0;
-}
+h1, h2 { margin-top: 0; }
 
 h1 {
   font-size: clamp(2.2rem, 5vw, 4rem);
@@ -62,37 +57,73 @@ h1 {
   margin-bottom: 16px;
 }
 
-.lead {
-  font-size: 1.05rem;
+.lead, .subtle {
   line-height: 1.8;
   color: var(--muted);
-  margin-bottom: 28px;
 }
 
 .card {
   background: var(--panel);
   border: 1px solid var(--border);
   backdrop-filter: blur(12px);
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 24px;
   box-shadow: var(--shadow);
   margin-bottom: 20px;
+}
+
+.hero { padding: 32px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .card.accent {
   border-color: rgba(125, 211, 252, 0.4);
 }
 
-ul {
-  margin: 0;
-  padding-left: 20px;
-  line-height: 1.9;
+.status-list {
+  display: grid;
+  gap: 18px;
 }
 
-#clock {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: 12px 0 18px;
+.label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+strong {
+  font-size: 1.1rem;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.24);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 14px 16px;
+  resize: vertical;
+  font: inherit;
+}
+
+body.light textarea {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+
+.hero-actions.small {
+  margin-top: 16px;
 }
 
 button {
@@ -108,6 +139,17 @@ button {
   box-shadow: 0 10px 30px rgba(2, 132, 199, 0.28);
 }
 
-button:hover {
-  transform: translateY(-1px);
+button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+button:hover { transform: translateY(-1px); }
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.9;
 }

@@ -1,18 +1,22 @@
 # openclaw_raspi
 
-GitHub Pages でそのまま公開できる、ビルド不要の静的 HTML サンプルです。
+GitHub Pages でそのまま公開できる、PWA風の静的 HTML サンプルです。
 
-## ファイル
+## できること
 
-- `index.html`
-- `style.css`
-- `script.js`
+- テーマ切り替え
+- 現在時刻表示
+- 接続状態表示
+- localStorage によるメモ保存
+- Web App Manifest
+- Service Worker による簡易オフライン対応
+- ホーム画面追加導線（対応ブラウザのみ）
 
 ## GitHub Pages 設定
-
-GitHub の Settings → Pages で以下を設定します。
 
 - Branch: `main`
 - Folder: `/ (root)`
 
-この設定で、リポジトリ直下の `index.html` がそのまま公開されます。
+公開URL:
+
+- <https://futonchan.github.io/openclaw_raspi/>

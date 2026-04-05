@@ -3,31 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GitHub Pages Sample</title>
-    <meta name="description" content="OpenClawで作ったGitHub Pages向けHTMLサンプル" />
+    <meta name="theme-color" content="#0f172a" />
+    <title>OpenClaw PWA Sample</title>
+    <meta name="description" content="GitHub Pagesで動くPWA風のサンプルサイト" />
+    <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main class="container">
-      <p class="eyebrow">GitHub Pages Sample</p>
-      <h1>こんにちは、GitHub Pages</h1>
-      <p class="lead">
-        これは Raspberry Pi 上の OpenClaw から作った、静的ホスティング向けの最小サンプルです。
-      </p>
+      <header class="hero card">
+        <p class="eyebrow">OpenClaw × GitHub Pages</p>
+        <h1>PWAっぽく動く静的サイト</h1>
+        <p class="lead">
+          GitHub Pages 上でそのまま公開できる、インストール導線・オフライン対応・ローカル保存つきの軽量サンプルです。
+        </p>
+        <div class="hero-actions">
+          <button id="themeToggle" type="button">テーマ切り替え</button>
+          <button id="installButton" type="button" class="secondary" hidden>アプリとして追加</button>
+        </div>
+        <p id="installStatus" class="subtle">ブラウザが対応していればホーム画面追加できます。</p>
+      </header>
 
-      <section class="card">
-        <h2>やっていること</h2>
-        <ul>
-          <li>HTML / CSS / JS だけで動く</li>
-          <li>ビルド不要</li>
-          <li>そのまま GitHub Pages に置ける</li>
-        </ul>
+      <section class="grid">
+        <section class="card">
+          <h2>現在の状態</h2>
+          <div class="status-list">
+            <div>
+              <span class="label">現在時刻</span>
+              <strong id="clock">読み込み中...</strong>
+            </div>
+            <div>
+              <span class="label">接続状態</span>
+              <strong id="connectionStatus">確認中...</strong>
+            </div>
+            <div>
+              <span class="label">保存状態</span>
+              <strong id="saveStatus">未保存</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="card accent">
+          <h2>メモ</h2>
+          <label class="label" for="memoInput">ローカル保存されるメモ</label>
+          <textarea id="memoInput" rows="7" placeholder="GitHub Pagesでも localStorage は使えるので、ちょっとしたメモアプリっぽい動きができます。"></textarea>
+          <div class="hero-actions small">
+            <button id="saveMemoButton" type="button">保存</button>
+            <button id="clearMemoButton" type="button" class="secondary">クリア</button>
+          </div>
+        </section>
       </section>
 
-      <section class="card accent">
-        <h2>今の時刻</h2>
-        <p id="clock">読み込み中...</p>
-        <button id="themeToggle" type="button">テーマ切り替え</button>
+      <section class="card">
+        <h2>このサンプルでやっていること</h2>
+        <ul>
+          <li>ホーム画面追加用の Web App Manifest</li>
+          <li>Service Worker によるシンプルなオフラインキャッシュ</li>
+          <li>localStorage によるメモの保持</li>
+          <li>テーマ切り替えの保持</li>
+          <li>GitHub Pages でそのまま配信できる相対パス構成</li>
+        </ul>
       </section>
     </main>
 
