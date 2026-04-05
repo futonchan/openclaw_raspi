@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slot Alarm</title>
+    <meta name="description" content="777を揃えないと止められないスロット風目覚ましアプリ" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero panel">
+        <p class="eyebrow">Slot Alarm</p>
+        <h1>777を揃えるまで止まらない目覚まし</h1>
+        <p class="lead">まずは時刻を設定して保存。指定時刻になるとアラーム状態になり、次の段階でスロット解除ロジックを載せていく骨組みです。</p>
+      </section>
+
+      <section class="grid">
+        <section class="panel">
+          <h2>アラーム設定</h2>
+          <label for="alarmTime">時刻</label>
+          <input id="alarmTime" type="time" />
+          <div class="actions">
+            <button id="saveAlarmButton" type="button">保存</button>
+            <button id="clearAlarmButton" type="button" class="secondary">クリア</button>
+          </div>
+          <p id="saveMessage" class="muted">未保存</p>
+        </section>
+
+        <section class="panel accent">
+          <h2>状態</h2>
+          <dl class="status-list">
+            <div>
+              <dt>現在時刻</dt>
+              <dd id="clock">読み込み中...</dd>
+            </div>
+            <div>
+              <dt>設定時刻</dt>
+              <dd id="alarmDisplay">未設定</dd>
+            </div>
+            <div>
+              <dt>アラーム状態</dt>
+              <dd id="alarmState">待機中</dd>
+            </div>
+          </dl>
+        </section>
+      </section>
+
+      <section class="panel slot-preview">
+        <h2>スロット解除エリア（次段階の骨組み）</h2>
+        <div class="reels" aria-label="slot preview">
+          <div class="reel">7</div>
+          <div class="reel">?</div>
+          <div class="reel">7</div>
+        </div>
+        <p class="muted">次のタスクで、ここに 3 リール・すべり目・777 判定を実装する。</p>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
